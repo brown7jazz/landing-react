@@ -1,0 +1,37 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 4rem;
+    background-color: #ffffff;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .navbar.sticky {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .logo img {
+    height: 47px;
+  }
+  
+  .navItems {
+    display: flex;
+    list-style-type: none;
+  }
+  
+  .navItems li {
+    margin-left: 1rem;
+  }
+  
+  .navItems a {
+    color: #50514f;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    padding-left: 2rem;
+  }
