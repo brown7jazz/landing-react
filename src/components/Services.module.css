@@ -1,6 +1,7 @@
 .servicesSection {
     padding: 2rem;
     background-color: #f5f5f5;
+    padding: 3% 4% 5% 4%
   }
   
   .servicesSection h2 {
@@ -43,6 +44,7 @@
     font-size: 22px;
     color: #50414f;
     margin-bottom: 0.5rem;
+    padding-top: 3rem;
   }
   
   .serviceCard p {

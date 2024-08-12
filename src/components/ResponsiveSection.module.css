@@ -1,0 +1,49 @@
+.responsiveSection {
+  padding: 4rem 0;
+  background-color: #ffffff; /* o el color que prefieras */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.textContent h2 {
+  font-size: 40px;
+  margin-bottom: 1rem;
+  color: #50414f;
+}
+
+.textContent p {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+}
+
+.lottieContent {
+  width: 350px;
+  height: 350px;
+  margin-left: 9rem;
+  min-height: 300px; /* Ajusta según sea necesario */
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .lottieContent {
+    order: -1; /* Esto pondrá la animación arriba en dispositivos móviles */
+  }
+}
