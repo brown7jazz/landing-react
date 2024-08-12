@@ -1,13 +1,14 @@
 .technologiesSection {
     padding: 2rem;
     background-color: #f5f5f5;
+    padding: 3% 4% 4% 4%;
   }
   
   .technologiesSection h2 {
     font-size: 40px;
     text-align: center;
     color: var(--color-secondary);
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
   }
   
   .techSlide {
