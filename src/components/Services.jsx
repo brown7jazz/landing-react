@@ -26,12 +26,12 @@ const Services = () => {
     },
     {
       title: "Soporte",
-      description: "Nos ocupamos de las mantenciones contínuas de tu sitios web, actualizaciones globales, publicaciones de noticias, eventos, novedades, galerías de fotos, integración con Google Analytics 4.",
+      description: "Mantenciones contínuas de tu sitio web, actualizaciones globales, publicaciones de noticias, eventos, novedades, galerías de fotos, integración con Google Analytics 4.",
       image: "/images/support.png"
     },
     {
       title: "Ecommerce",
-      description: "Potencia tus ventas en internet con un e-Commerce, integramos tu sitio web con los diferentes medios de pago conocidos Stripe, Transbank, PayPal, Webpay, Mercadopago, Flow, etc.",
+      description: "Potencia tus ventas en internet con un e-Commerce, integramos tu tienda con los diferentes medios de pago Stripe, Transbank, PayPal, Webpay, Mercadopago, Flow, etc.",
       image: "/images/ecommerce.png"
     }
    

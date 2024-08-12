@@ -6,14 +6,18 @@ import styles from './Technologies.module.css';
 
 const Technologies = () => {
   const technologies = [
-    { name: "React", image: "/images/react.webp" },
-    { name: "Node.js", image: "/images/nodejs.webp" },
-    { name: "JavaScript", image: "/images/javascript.webp" },
-    { name: "HTML5", image: "/images/html5.webp" },
-    { name: "CSS3", image: "/images/css3.webp" },
-    { name: "MongoDB", image: "/images/mongodb.webp" },
-    { name: "Express", image: "/images/express.webp" },
-    { name: "Git", image: "/images/git.webp" }
+    { name: "React", image: "/images/react.png" },
+    { name: "Node.js", image: "/images/nodejs.png" },
+    { name: "JavaScript", image: "/images/javascript.png" },
+    { name: "Github Pages", image: "/images/githubpages.png" },
+    { name: "HTML5", image: "/images/html5.png" },
+    { name: "Astro", image: "/images/astro.png" },
+    { name: "MongoDB", image: "/images/mongodb.png" },
+    { name: "Wordpress", image: "/images/wordpress.png" },
+    { name: "Woocommerce", image: "/images/woocommerce.png" },
+    { name: "AWS", image: "/images/amazon-web-services.png" }
+
+    
   ];
 
   const settings = {
