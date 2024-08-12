@@ -23,6 +23,9 @@ const Technologies = () => {
   const settings = {
     dots: true,
     infinite: true,
+    loop: true,
+    autoplay: true,
+    autoplaySpeed: 3000,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 4,

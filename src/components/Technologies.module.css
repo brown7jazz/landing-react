@@ -20,3 +20,17 @@
     height: 95px;
     object-fit: contain;
   }
+
+  @media (max-width: 768px) {
+    .technologiesSection {
+      padding: 8% 4% 13% 4%;
+    }
+
+    .technologiesSection h2 {
+      font-size: 32px;
+      text-align: center;
+      color: var(--color-secondary);
+    }
+
+
+  }
