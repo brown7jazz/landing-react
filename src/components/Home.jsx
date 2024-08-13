@@ -4,6 +4,7 @@ import ResponsiveSection from './ResponsiveSection'
 import Services from './Services';
 import Plans from './Plans';
 import Technologies from './Technologies';
+import AboutSection from './AboutSection';
 import Contact from './Contact';
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
       <Services />
       <Plans />
       <Technologies />
+      <AboutSection />
       <Contact />
     </div>
   );
