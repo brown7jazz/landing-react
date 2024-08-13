@@ -7,6 +7,7 @@ const Contact = () => {
     apellido: '',
     telefono: '',
     email: '',
+    tipoServicio: '',
     mensaje: ''
   });
 
@@ -18,18 +19,34 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Aquí iría la lógica para enviar el formulario
-    console.log('Formulario enviado:', formData);
-    // Resetear el formulario después del envío
-    setFormData({
-      nombre: '',
-      apellido: '',
-      telefono: '',
-      email: '',
-      mensaje: ''
-    });
+    try {
+      const response = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        alert('Mensaje enviado con éxito');
+        setFormData({
+          nombre: '',
+          apellido: '',
+          telefono: '',
+          email: '',
+          tipoServicio: '',
+          mensaje: ''
+        });
+      } else {
+        throw new Error('Error al enviar el mensaje');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Error al enviar el mensaje');
+    }
   };
 
   return (
@@ -37,56 +54,72 @@ const Contact = () => {
       <h2>Contáctanos</h2>
       <form onSubmit={handleSubmit} className={styles.contactForm}>
         <div className={styles.formGroup}>
-          <label htmlFor="nombre">Nombre *</label>
           <input
             type="text"
             id="nombre"
             name="nombre"
             value={formData.nombre}
             onChange={handleChange}
+            placeholder="Nombre*"
             required
           />
         </div>
         <div className={styles.formGroup}>
-          <label htmlFor="apellido">Apellido *</label>
           <input
             type="text"
             id="apellido"
             name="apellido"
             value={formData.apellido}
             onChange={handleChange}
+            placeholder="Apellido*"
             required
           />
         </div>
         <div className={styles.formGroup}>
-          <label htmlFor="telefono">Teléfono *</label>
           <input
             type="tel"
             id="telefono"
             name="telefono"
             value={formData.telefono}
             onChange={handleChange}
+            placeholder="Teléfono*"
             required
           />
         </div>
         <div className={styles.formGroup}>
-          <label htmlFor="email">Email *</label>
           <input
             type="email"
             id="email"
             name="email"
             value={formData.email}
             onChange={handleChange}
+            placeholder="Email*"
             required
           />
         </div>
         <div className={styles.formGroup}>
-          <label htmlFor="mensaje">Mensaje</label>
+          <select
+            id="tipoServicio"
+            name="tipoServicio"
+            value={formData.tipoServicio}
+            onChange={handleChange}
+            required
+          >
+            <option value="">Seleccione un tipo de servicio</option>
+            <option value="Landing page">Landing page</option>
+            <option value="Sitio web (5 secciones)">Sitio web (5 secciones)</option>
+            <option value="Tienda online">Tienda online</option>
+            <option value="Web SPA">Web SPA</option>
+            <option value="Soporte web">Soporte web</option>
+          </select>
+        </div>
+        <div className={styles.formGroup}>
           <textarea
             id="mensaje"
             name="mensaje"
             value={formData.mensaje}
             onChange={handleChange}
+            placeholder="Mensaje (opcional)"
           ></textarea>
         </div>
         <button type="submit" className={styles.submitButton}>Enviar</button>
