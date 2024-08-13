@@ -48,13 +48,14 @@ const Contact = () => {
           />
         </div>
         <div className={styles.formGroup}>
-          <label htmlFor="apellido">Apellido</label>
+          <label htmlFor="apellido">Apellido *</label>
           <input
             type="text"
             id="apellido"
             name="apellido"
             value={formData.apellido}
             onChange={handleChange}
+            required
           />
         </div>
         <div className={styles.formGroup}>
