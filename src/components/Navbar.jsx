@@ -4,6 +4,7 @@ import styles from './Navbar.module.css';
 
 const Navbar = () => {
   const [isSticky, setIsSticky] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,15 +26,25 @@ const Navbar = () => {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
+      setIsMenuOpen(false);
     }
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
     <nav className={`${styles.navbar} ${isSticky ? styles.sticky : ''}`}>
       <div className={styles.logo}>
-      <Link to="http://localhost:3000/"><img src="/images/logo.png" alt="Logo" /></Link>
+        <Link to="http://localhost:3000/">
+          <img src="/images/logo.png" alt="Logo" />
+        </Link>
       </div>
-      <ul className={styles.navItems}>
+      <div className={styles.menuIcon} onClick={toggleMenu}>
+        ☰
+      </div>
+      <ul className={`${styles.navItems} ${isMenuOpen ? styles.active : ''}`}>
         <li><Link to="/" onClick={() => scrollToSection('inicio')}>Inicio</Link></li>
         <li><Link to="/" onClick={() => scrollToSection('servicios')}>Servicios</Link></li>
         <li><Link to="/" onClick={() => scrollToSection('planes')}>Planes</Link></li>

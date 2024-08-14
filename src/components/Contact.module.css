@@ -64,3 +64,35 @@
     width: 103%;
     
   }
+
+  @media (max-width: 768px) {
+    .contactSection {
+      padding: 4% 4% 4% 4%;
+    }
+
+    .contactForm {
+      max-width: 300px;
+      margin: 0 auto;
+    }
+
+    .formGroup select, .TipoServicio {
+      width: 106%;
+    }
+
+  }
+
+  @media (max-width: 480px) {
+    .contactSection {
+      padding: 8% 4% 10% 4%;
+    }
+
+    .contactForm {
+      max-width: 300px;
+      margin: 0 auto;
+    }
+
+    .formGroup select, .TipoServicio {
+      width: 106%;
+    }
+
+  }
