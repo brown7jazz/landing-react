@@ -31,7 +31,7 @@ const Navbar = () => {
   return (
     <nav className={`${styles.navbar} ${isSticky ? styles.sticky : ''}`}>
       <div className={styles.logo}>
-        <img src="/images/logo.png" alt="Logo" />
+      <Link to="http://localhost:3000/"><img src="/images/logo.png" alt="Logo" /></Link>
       </div>
       <ul className={styles.navItems}>
         <li><Link to="/" onClick={() => scrollToSection('inicio')}>Inicio</Link></li>
