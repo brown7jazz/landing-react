@@ -21,6 +21,7 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log('Datos del formulario:', formData);
     try {
       const response = await fetch('http://localhost:5000/api/contact', {
         method: 'POST',
@@ -29,9 +30,12 @@ const Contact = () => {
         },
         body: JSON.stringify(formData),
       });
-
+  
+      const responseData = await response.text();
+      console.log('Respuesta del servidor:', responseData);
+  
       if (response.ok) {
-        alert('Mensaje enviado con éxito');
+        alert('Mensaje enviado con éxito: ' + responseData);
         setFormData({
           nombre: '',
           apellido: '',
@@ -41,11 +45,11 @@ const Contact = () => {
           mensaje: ''
         });
       } else {
-        throw new Error('Error al enviar el mensaje');
+        throw new Error('Error del servidor: ' + responseData);
       }
     } catch (error) {
-      console.error('Error:', error);
-      alert('Error al enviar el mensaje');
+      console.error('Error detallado:', error);
+      alert('Error al enviar el mensaje: ' + error.message);
     }
   };
 
@@ -98,11 +102,12 @@ const Contact = () => {
           />
         </div>
         <div className={styles.formGroup}>
-          <select
+          <select class="TipoServicio"
             id="tipoServicio"
             name="tipoServicio"
             value={formData.tipoServicio}
             onChange={handleChange}
+            placeholder="Seleccione un tipo de servicio*"
             required
           >
             <option value="">Seleccione un tipo de servicio</option>
