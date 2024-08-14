@@ -102,7 +102,7 @@ const Contact = () => {
           />
         </div>
         <div className={styles.formGroup}>
-          <select class="TipoServicio"
+          <select className="TipoServicio"
             id="tipoServicio"
             name="tipoServicio"
             value={formData.tipoServicio}
